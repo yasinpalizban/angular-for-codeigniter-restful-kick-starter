@@ -7,10 +7,11 @@ BootStrap 4 component and so many things.
 > </br> here is link : </br>
 > https://github.com/yasinpalizban/
 
-### Run Application
+### Run Application And Build
 
 ```
 ng serve
+ng build
 
 ```
 
