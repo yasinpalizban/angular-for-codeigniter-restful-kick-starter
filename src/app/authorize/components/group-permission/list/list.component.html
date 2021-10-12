@@ -1,0 +1,102 @@
+<div class="table-responsive table-responsive-data2">
+
+  <div>
+
+    <app-permission-group-search></app-permission-group-search>
+
+  </div>
+  <table class="table table-data2">
+    <thead>
+    <tr>
+      <!--      <th>-->
+      <!--        <label class="au-checkbox">-->
+      <!--          <input type="checkbox">-->
+      <!--          <span class="au-checkmark"></span>-->
+      <!--        </label>-->
+      <!--      </th>-->
+      <th>#</th>
+      <th>{{ 'filed.permissionId' | translate }}</th>
+      <th>{{ 'filed.group' | translate }}</th>
+      <th>{{ 'filed.actions' | translate }}</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr class="tr-shadow" *ngFor=" let permisionGroup of this.permissionGroupRows?.data; let i= index;">
+      <!--      <td>-->
+      <!--        <label class="au-checkbox">-->
+      <!--          <input type="checkbox">-->
+      <!--          <span class="au-checkmark"></span>-->
+      <!--        </label>-->
+      <!--      </td>-->
+      <td>{{i + 1}}</td>
+
+
+
+      <td>
+        <span class="block-email">{{permisionGroup.permission}}</span>
+      </td>
+      <td>
+        <span class="block-email">{{permisionGroup.group}}</span>
+      </td>
+      <td>
+        <span class="block-email">{{permisionGroup.actions}}</span>
+      </td>
+      <td>
+        <div class="table-data-feature">
+
+          <button tooltip="{{ 'common.edit' | translate }}" (click)="onEditItem(permisionGroup.id)" class="item"
+                  data-toggle="tooltip">
+            <fa-icon [icon]="faIcon.faEdit"></fa-icon>
+          </button>
+          <button tooltip="{{ 'common.remove' | translate }}" (click)="onOpenModal(template,permisionGroup.id,i)"
+                  class="item" data-toggle="tooltip">
+            <fa-icon [icon]="faIcon.faTrash"></fa-icon>
+          </button>
+          <button tooltip="{{ 'common.detail' | translate }}" (click)="onDetailItem(permisionGroup.id)" class="item"
+                  data-toggle="tooltip">
+            <fa-icon [icon]="faIcon.faEnvelopeOpen"></fa-icon>
+          </button>
+
+        </div>
+      </td>
+
+
+    </tr>
+    <tr class="spacer"></tr>
+
+    </tbody>
+  </table>
+
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <pagination
+        previousText="{{ 'common.previous' | translate }}"
+        nextText="{{ 'common.next' | translate }}"
+        [totalItems]="totalPage"
+        [(ngModel)]="currentPage"
+        (pageChanged)="onChangePaginate($event)"
+        [maxSize]="sizePage"></pagination>
+    </div>
+  </div>
+  <div class="col-md-3"></div>
+</div>
+
+<ng-template #template>
+  <div class="modal-header">
+    <fa-icon [icon]="faIcon.faTrash"></fa-icon> &nbsp;
+    <h4 class="modal-title pull-left">{{ 'common.remove' | translate }}</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="onModalHide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>{{ 'common.doYouWantDelete' | translate }} <strong class="text-danger">{{this.deleteItem}}</strong></p>
+
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="onModalHide()">{{ 'common.cancel' | translate }}</button>
+    <button type="button" class="btn btn-primary" (click)="onModalConfirm()">{{ 'common.confirm' | translate }}</button>
+  </div>
+</ng-template>

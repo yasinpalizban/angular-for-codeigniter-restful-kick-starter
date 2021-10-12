@@ -1,0 +1,38 @@
+
+<div class="table-responsive">
+  <table class="table table-top-campaign">
+    <tbody>
+    <tr>
+      <td>{{ 'filed.key' | translate }}</td>
+      <td>{{this.settingDetail.data![0].key  }}</td>
+    </tr>
+    <tr>
+      <td>{{ 'filed.value' | translate }}</td>
+      <td>{{this.settingDetail.data![0].value}}</td>
+    </tr>
+    <tr>
+      <td>{{ 'filed.status' | translate }}</td>
+      <td>
+        <span *ngIf="this.settingDetail.data![0].status==1" class="status--process">  {{ 'filed.activate' | translate }}</span>
+        <span *ngIf="this.settingDetail.data![0].status==0" class="status--denied">  {{ 'filed.deActivate' | translate }}</span>
+
+      </td>
+    </tr>
+
+    <tr>
+      <td>{{ 'filed.description' | translate }}</td>
+      <td>{{this.settingDetail.data![0].description}}</td>
+    </tr>
+
+    <tr>
+      <td>{{ 'filed.create' | translate }}</td>
+      <td>{{this.settingDetail.data![0].createdAt?.date|date}}</td>
+    </tr>
+
+    <tr>
+      <td>{{ 'filed.update' | translate }}</td>
+      <td>{{this.settingDetail.data![0].updatedAt?.date|date}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

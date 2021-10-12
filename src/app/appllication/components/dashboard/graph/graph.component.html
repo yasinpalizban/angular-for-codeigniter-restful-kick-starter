@@ -1,0 +1,66 @@
+<div class="row">
+
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <fa-icon [icon]="faIcon.faChartArea"></fa-icon>
+        <strong class="card-title pl-2">{{ 'dashboard.chart' | translate }} </strong>
+      </div>
+      <div class="card-body">
+        <!-- DATA TABLE-->
+
+        <ngx-charts-bar-vertical-stacked
+          [view]="[600, 400]"
+          [scheme]="colorScheme"
+          [results]="multi"
+          [gradient]="gradient"
+          [xAxis]="showXAxis"
+          [yAxis]="showYAxis"
+          [legend]="showLegend"
+          [showXAxisLabel]="showXAxisLabel"
+          [showYAxisLabel]="showYAxisLabel"
+          [xAxisLabel]="xAxisLabel"
+          [yAxisLabel]="yAxisLabel">
+        </ngx-charts-bar-vertical-stacked>
+
+      </div>
+    </div>
+  </div>
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <fa-icon [icon]="faIcon.faChartArea"></fa-icon>
+        <strong class="card-title pl-2">{{ 'dashboard.chart' | translate }} </strong>
+      </div>
+      <div class="card-body">
+        <!-- DATA TABLE-->
+
+        <ngx-charts-pie-chart
+          [results]="saleData"
+          [legend]="true"
+          [legendTitle]="'Product Sale Report'"
+          [view]="[600,400]"
+          [labels]="true" >
+        </ngx-charts-pie-chart>
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-12">
+    <div class="card">
+      <div class="card-header">
+        <fa-icon [icon]="faIcon.faChartArea"></fa-icon>
+        <strong class="card-title pl-2">{{ 'dashboard.chart' | translate }} </strong>
+      </div>
+      <div class="card-body">
+        <!-- DATA TABLE-->
+
+        <ngx-charts-pie-grid
+          [results]="saleData2" >
+        </ngx-charts-pie-grid>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+

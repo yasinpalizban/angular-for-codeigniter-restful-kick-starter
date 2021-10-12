@@ -1,0 +1,130 @@
+<div class="page-wrapper">
+  <div class="page-content--bge5">
+    <div class="container">
+      <div class="login-wrap">
+        <div class="login-content">
+          <div class="login-logo">
+<!--            <a href="#">-->
+<!--              <img src="assets/images/icon/logo.png" alt="CoolAdmin">-->
+<!--            </a>-->
+            <h4> {{ 'auth.signUp' | translate }}</h4>
+          </div>
+          <div class="login-form">
+            <form novalidate (ngSubmit)="onSubmit()" [formGroup]="fromGroup">
+              <div class="form-group">
+                <app-alert></app-alert>
+              </div>
+              <div class="form-group">
+                <label>{{ 'filed.userName' | translate }}</label>
+                <input
+                  formControlName="username"
+                  required
+                  [ngClass]="{ 'is-invalid': fromGroup.controls.username.invalid && fromGroup.controls.username.touched }"
+                  class="au-input au-input--full"
+                  type="text"
+                  name="username"
+                  placeholder="{{ 'filed.userName' | translate }}">
+                <div *ngIf=" !submitted &&fromGroup.controls.username.invalid ||fromGroup.controls.username.touched"
+                     class="invalid-feedback">
+                  <div *ngIf="fromGroup.controls.username.errors"
+                       class="pull-right">{{ 'common.required' | translate }}</div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>{{ 'filed.emailPhone' | translate }}</label>
+                <input
+                  formControlName="login"
+                  required
+                  [ngClass]="{ 'is-invalid': fromGroup.controls.login.invalid && fromGroup.controls.login.touched }"
+                  class="au-input au-input--full"
+                  type="text"
+                  name="login"
+                  placeholder="{{ 'filed.emailPhone' | translate }}">
+                <div *ngIf=" !submitted &&fromGroup.controls.login.invalid ||fromGroup.controls.login.touched"
+                     class="invalid-feedback">
+                  <div *ngIf="fromGroup.controls.login.errors"
+                       class="pull-right">{{ 'common.required' | translate }}</div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>{{ 'filed.password' | translate }}</label>
+                <input
+                  formControlName="password"
+                  required
+                  [ngClass]="{ 'is-invalid': fromGroup.controls.password.invalid && fromGroup.controls.password.touched }"
+
+                  class="au-input au-input--full"
+                  type="password"
+                  name="password"
+                  placeholder="Password">
+                <div *ngIf=" !submitted &&fromGroup.controls.password.invalid ||fromGroup.controls.password.touched"
+                     class="invalid-feedback">
+                  <div *ngIf="fromGroup.controls.password.errors"
+                       class="pull-right">{{ 'common.required' | translate }}</div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>{{ 'filed.passwordConfirm' | translate }}</label>
+                <input
+                  formControlName="passConfirm"
+                  required
+                  [ngClass]="{ 'is-invalid': fromGroup.controls.passConfirm.invalid && fromGroup.controls.passConfirm.touched }"
+                  class="au-input au-input--full"
+                  type="password"
+                  name="passConfirm"
+                  placeholder="{{ 'filed.passwordConfirm' | translate }}">
+                <div
+                  *ngIf=" !submitted &&fromGroup.controls.passConfirm.invalid ||fromGroup.controls.passConfirm.touched"
+                  class="invalid-feedback">
+                  <div *ngIf="fromGroup.controls.passConfirm.errors?.required"
+                       class="pull-right">{{ 'common.required' | translate }}</div>
+                  <div *ngIf="fromGroup.controls.passConfirm.errors?.mustMatch"
+                       class="pull-right">{{ 'common.notEqual' | translate }}</div>
+                </div>
+              </div>
+              <div class="login-checkbox">
+                <label>
+                  <input type="checkbox" name="agree">   {{ 'auth.agreeWith' | translate }}
+                </label>
+              </div>
+              <button
+                class="au-btn au-btn--block au-btn--green m-b-20"
+                type="submit"
+                [disabled]="fromGroup.invalid">{{ 'auth.register' | translate }}</button>
+              <div class="">
+                <div class="register-link">
+                  <button (click)="signInWithFB()" class="btn  btn-primary m-r-5">
+                    <fa-icon [icon]="icons.faFacebookF"></fa-icon>
+                  </button>
+                  <button (click)="signInWithGoogle()" class="btn btn-danger m-r-5">
+                    <fa-icon [icon]="icons.faGoogle"></fa-icon>
+                  </button>
+                  <button (click)="signInWithInstagram()" class="btn btn-secondary ">
+                    <fa-icon [icon]="icons.faInstagram"></fa-icon>
+                  </button>
+                </div>
+              </div>
+            </form>
+            <div class="card" style=" border: none; padding: 0; margin: 0">
+
+              <div class="card-body">
+                <button [routerLink]="['/home/sign-in']" data-toggle="tooltip" tooltip="  {{ 'auth.alreadyHave' | translate }}" type="button" class="btn btn-link btn-sm">
+                  {{ 'auth.signIn' | translate }}</button>
+                <button [routerLink]="['../forgot']" data-toggle="tooltip" tooltip="  {{ 'auth.doNotRememberPassword' | translate }}" type="button" class="btn btn-link btn-sm">
+                  {{ 'auth.forgotPassword' | translate }}</button>
+                <button [routerLink]="['../reset-password']" data-toggle="tooltip" tooltip="   {{ 'auth.needResetPassword' | translate }}" type="button" class="btn btn-link btn-sm">
+                  {{ 'auth.resetPassword' | translate }}</button>
+                <button [routerLink]="['../activation']" data-toggle="tooltip" tooltip="   {{ 'auth.needActivateAccount' | translate }}" type="button" class="btn btn-link btn-sm">
+                  {{ 'auth.activationAccount' | translate }}</button>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

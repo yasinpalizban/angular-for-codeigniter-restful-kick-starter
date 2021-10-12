@@ -1,0 +1,125 @@
+<form novalidate (ngSubmit)="onSubmit()" [formGroup]="formGroup">
+
+
+
+  <div class="form-group">
+    <app-alert></app-alert>
+  </div>
+
+  <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-addon">{{ 'filed.key' | translate }}</div>
+      <input type="text"
+             id="_key"
+             name="_key"
+             class="form-control"
+             formControlName="_key"
+             required
+             [ngClass]="{ 'is-invalid': formGroup.controls._key.invalid  && formGroup.controls._key.touched }"
+             [value]=""
+      >
+      <div class="input-group-addon">
+        <fa-icon  [icon]="faIcon.faFileWord" ></fa-icon>
+      </div>
+      <div
+        *ngIf=" !submitted &&formGroup.controls._key.invalid ||formGroup.controls._key.touched"
+        class="invalid-feedback">
+        <div *ngIf="formGroup.controls._key.hasError('required')" class="pull-right">{{ 'common.required' | translate }}
+        </div>
+        <div *ngIf="formGroup.controls._key.hasError('maxlength')"
+             class="pull-right">{{ 'common.canNotBe' | translate }}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-addon">{{ 'filed.value' | translate }}</div>
+      <input type="text"
+             id="_value"
+             name="_value"
+             class="form-control"
+             formControlName="_value"
+             required
+             [ngClass]="{ 'is-invalid': formGroup.controls._value.invalid  && formGroup.controls._value.touched }"
+             [value]=""
+      >
+      <div class="input-group-addon">
+        <fa-icon  [icon]="faIcon.faFileWord" ></fa-icon>
+      </div>
+      <div
+        *ngIf=" !submitted &&formGroup.controls._value.invalid ||formGroup.controls._value.touched"
+        class="invalid-feedback">
+        <div *ngIf="formGroup.controls._value.hasError('required')"
+             class="pull-right">{{ 'common.required' | translate }}
+        </div>
+        <div *ngIf="formGroup.controls._value.hasError('maxlength')"
+             class="pull-right">{{ 'common.canNotBe' | translate }}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-addon">{{ 'filed.description' | translate }}</div>
+      <input type="text"
+             id="description"
+             name="description"
+             class="form-control"
+             formControlName="description"
+             required
+             [ngClass]="{ 'is-invalid':formGroup.controls.description.invalid  && formGroup.controls.description.touched }"
+             [value]=""
+      >
+      <div class="input-group-addon">
+        <fa-icon  [icon]="faIcon.faAddressBook" ></fa-icon>
+      </div>
+      <div
+        *ngIf=" !submitted &&formGroup.controls. description.invalid ||formGroup.controls. description.touched"
+        class="invalid-feedback">
+        <div *ngIf="formGroup.controls.description.hasError('required')"
+             class="pull-right">{{ 'common.required' | translate }}
+        </div>
+        <div *ngIf="formGroup.controls.description.hasError('maxlength')"
+             class="pull-right">{{ 'common.canNotBe' | translate }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-addon">{{ 'filed.status' | translate }}</div>
+      <select
+
+        id="gender"
+        name="status"
+        class="form-control"
+        formControlName="status"
+        required
+        [ngClass]="{ 'is-invalid': formGroup.controls.status.invalid  && formGroup.controls.status.touched }"
+        [value]=""
+      >
+        <option value="1">{{ 'filed.activate' | translate }}</option>
+        <option value="0">{{ 'filed.deActivate' | translate }}</option>
+      </select>
+      <div class="input-group-addon">
+        <fa-icon  [icon]="faIcon.faEye" ></fa-icon>
+      </div>
+
+      <div
+        *ngIf=" !submitted &&formGroup.controls.status.invalid ||formGroup.controls.status.touched"
+        class="invalid-feedback">
+        <div *ngIf="formGroup.controls.status.hasError('required')"
+             class="pull-right">{{ 'common.required' | translate }}
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="form-actions form-group ">
+    <button [disabled]="formGroup.invalid" type="submit" class="btn btn-primary btn-sm">{{ 'common.submit' | translate }}</button>
+  </div>
+</form>

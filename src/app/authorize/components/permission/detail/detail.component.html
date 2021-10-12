@@ -1,0 +1,23 @@
+
+<div class="table-responsive">
+  <table class="table table-top-campaign">
+    <tbody>
+    <tr>
+      <td>{{ 'filed.name' | translate }}</td>
+      <td>{{this.permissionDetail.data![0].name }}</td>
+    </tr>
+
+
+    <tr>
+      <td>{{ 'filed.description' | translate }}</td>
+      <td>{{this.permissionDetail.data![0].description}}</td>
+    </tr>
+    <tr>
+      <td>{{ 'filed.activate' | translate }}</td>
+      <td><span *ngIf="this.permissionDetail.data![0].active==1" class="status--process">  {{ 'filed.activate' | translate }}</span>
+        <span *ngIf="this.permissionDetail.data![0].active==0" class="status--denied">  {{ 'filed.deActivate' | translate }}</span>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

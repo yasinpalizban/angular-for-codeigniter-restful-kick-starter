@@ -1,0 +1,60 @@
+<div class="page-wrapper">
+  <div class="page-content--bge5">
+    <div class="container">
+      <div class="login-wrap">
+        <div class="login-content">
+          <div class="login-logo">
+<!--            <a href="#">-->
+<!--              <img src="assets/images/icon/logo.png" alt="CoolAdmin">-->
+<!--            </a>-->
+            <h4> {{ 'auth.forgotPassword' | translate }}</h4>
+          </div>
+          <div class="login-form">
+            <form novalidate (ngSubmit)="onSubmit()" [formGroup]="fromGroup">
+              <app-alert></app-alert>
+              <div class="form-group">
+                <label>{{ 'filed.emailPhone' | translate }}</label>
+                <input class="au-input au-input--full"
+                       formControlName="login"
+                       type="text"
+                       name="login"
+                       required
+                       placeholder="{{ 'filed.emailPhoneUsername' | translate }}"
+                       [ngClass]="{ 'is-invalid': fromGroup.controls.login.invalid && fromGroup.controls.login.touched }"
+                >
+                <div *ngIf=" !submitted &&fromGroup.controls.login.invalid ||fromGroup.controls.login.touched"
+                     class="invalid-feedback">
+                  <div *ngIf="fromGroup.controls.login.errors"
+                       class="pull-right">{{ 'common.required' | translate }}</div>
+                </div>
+              </div>
+
+              <button class="au-btn au-btn--block au-btn--green m-b-20"
+                      type="submit"
+                      [disabled]="fromGroup.invalid">{{ 'common.submit' | translate }}
+              </button>
+            </form>
+
+            <div class="card" style=" border: none; padding: 0; margin: 0">
+
+              <div class="card-body">
+                <button [routerLink]="['/home/sign-in']" data-toggle="tooltip" tooltip="  {{ 'auth.alreadyHave' | translate }}" type="button" class="btn btn-link btn-sm">
+                  {{ 'auth.signIn' | translate }}</button>
+
+                <button [routerLink]="['../sign-up']" data-toggle="tooltip" tooltip=" {{ 'auth.doNotHave' | translate }}" type="button" class="btn btn-link btn-sm">
+                  {{ 'auth.signUp' | translate }}</button>
+
+                <button [routerLink]="['../reset-password']" data-toggle="tooltip" tooltip="   {{ 'auth.needResetPassword' | translate }}" type="button" class="btn btn-link btn-sm">
+                  {{ 'auth.resetPassword' | translate }}</button>
+                <button [routerLink]="['../activation']" data-toggle="tooltip" tooltip="   {{ 'auth.needActivateAccount' | translate }}" type="button" class="btn btn-link btn-sm">
+                  {{ 'auth.activationAccount' | translate }}</button>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

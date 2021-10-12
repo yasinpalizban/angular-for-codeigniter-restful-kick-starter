@@ -1,0 +1,339 @@
+{
+  "filed": {
+    "link": "لینک",
+    "token": "رمزینه",
+    "password": "رمز",
+    "passwordConfirm": "تکرار رمز",
+    "userName": "نام کاربری",
+    "email": "ایمیل",
+    "name": "نام",
+    "title": "موضوع",
+    "phone": "تلفن",
+    "status": "وضعیت",
+    "activate": "فعال",
+    "deActivate": "غیر فعال",
+    "message": "پیام",
+    "reply": "جواب",
+    "description": "توضیحات",
+    "country": "کشور",
+    "city": "شهر",
+    "address": "ادرس",
+    "firstName": "نام",
+    "lastName": "نام خانوادگی",
+    "gender": "جنسیت",
+    "key": "کلید",
+    "value": "داده",
+    "group": "گروه",
+    "ip": "ای پی",
+    "os": "سیستم",
+    "lang": "طول",
+    "lat": "عرض",
+    "viewOption": "صفحه نخست",
+    "path": "مسیر",
+    "nameEn": "انگلیسی",
+    "nameFa": "فارسی",
+    "categoryId": "دسته",
+    "subCategoryId": "زیر دسته",
+    "postId": "پست خبری ",
+    "thumbnail": "انگشتی",
+    "image": "تصویر",
+    "video": "فیلم",
+    "titleEn": "موضوع انگلیسی",
+    "titleFa": "موضوع فارسی",
+    "body": "محتوی",
+    "picture": "تصویر",
+    "create": "ایجاد در",
+    "update": "بروز رسانی در",
+    "delete": "حذف شد",
+    "code": "کد فعل سازی",
+    "emailUsername": "ایمیل یا نام کاربری",
+    "emailPhone": "ایمیل یا پیامک",
+    "emailPhoneUsername": "ایمیل یا نام کاربری ، تلفن ",
+    "language": "زبان",
+    "permissionId": "مجوز ها",
+    "actions": "عملگرها"
+  },
+  "common": {
+    "confirm": "تایید",
+    "cancel": "لغو",
+    "delete": "حذف",
+    "remove": "حذف",
+    "detail": "بیشتر",
+    "edit": "ویرایش",
+    "create": "جدید",
+    "update": "بروز رسانی",
+    "submit": "تایید",
+    "doYouWantDelete": "می خوایید ایتم را حذف کنید ?",
+    "doYouWantEdit": "می خوایید ایتم را ویرایش کنید ?",
+    "message": "پیام",
+    "reply": "جواب",
+    "required": " فیلد مورد نیاز است",
+    "canNotBe": "نمی تواند بیشتر از 255 کارکتر باشد",
+    "notEqual": " تکرار رمز با رمز برابر نیستن",
+    "sortBy": "مرتب",
+    "orderBy": "برحسب",
+    "ruleBy": "نقش",
+    "searchBy": "جستوجو",
+    "search": "جستوجو",
+    "comments": "کامنت",
+    "files": "فایل ها",
+    "previous": "قبلی",
+    "next": "بعدی ",
+    "messageCreate": "داده های جدید ذخیره شدند",
+    "messageUpdate": "داده ها بروز رسانی شدند",
+    "sendEmailLink": "ارسال لینک فعال سازی",
+    "sendSmsCode": "ارسال کد پیامک ",
+    "advanceSearch": "جستو جی پیشرفته",
+    "DoYouWantSearch": "شما می خواهید جستو جو کینید ؟!",
+    "field": "فیلد",
+    "sign": "نشان",
+    "function": "تابع",
+    "value": "داده",
+    "data": "داده",
+    "add": "افزودن",
+    "addValue": "افزودن فیلد",
+    "removeValue": "حذف فیلد",
+    "selectInputMessage": "-- انتخاب کنید --"
+  },
+  "auth": {
+    "signIn": "ورود ",
+    "signUp": "ایجاد حساب",
+    "forgotPassword": "فراموش شدن رمز",
+    "rememberMe": "منو به خاطر بسپار",
+    "doNotHave": "  حساب ندارید ؟",
+    "register": "ّثبت نام",
+    "alreadyHave": "حساب کاربری دارم !",
+    "rest": "بازنشانی",
+    "agreeWith": "موافقت با سیاست های سایت ",
+    "messageRegister": "شما با موفقیت ثبت نام کردید \n شما نیاز به تایید حساب دارید \n لطفا به صفحه فعال سازی بروید و سپس ایمیل یا پیامک خودرا چک کنید ",
+    "messageActivate": "حساب کاربری فعال شد بعد چند ثانیه به صفحه دیگیر میریم",
+    "messageForgot": " لینک ریست  برای ایمیل و کد ریست برای تلفن شما ارسال شد ",
+    "messageReset": "رمز جدید ذخیره شد",
+    "messageSendSms": "پیامک برای شما ارسال شد ",
+    "messageSendEmail": "ایمیل برای شما ارسال شد ",
+    "activateViaEmail": "با ایمیل",
+    "activateViaSms": "با پیامک",
+    "doNotRememberPassword": "رمز یادم نیست ؟",
+    "resetPassword": "ریست رمز",
+    "needResetPassword": "ریست رمز حساب کاربری?",
+    "needActivateAccount": "فعال سازی حساب کاربری?",
+    "activation": "فعال سازی",
+    "activationAccount": "فعال سازی حساب ",
+    "resetViaEmail": "با ایمیل",
+    "resetViaSms": "با پیامک"
+  },
+  "404": {
+    "oops": "خطا!",
+    "title": "صفحه وجود ندارد -404 ",
+    "message": " صفحه مورد نظر وجود ندارد یا بطور موقت در دسترس نمی باشد "
+  },
+  "403": {
+    "oops": "خطا!",
+    "title": "ورود ممنوع -403  ",
+    "message": "ورود به این صفحه ممنوع می باشد ، در دسترس نمی باشد ."
+  },
+  "advertisement": {
+    "new": " تبلیغات جدید",
+    "detail": "جزییات تبلیغات",
+    "edit": "ویرایش جزییات",
+    "table": "جدول جرییات",
+    "select": "انتخاب فایل",
+    "click": "کلیک کنید",
+    "preview": "پیش نمایش"
+  },
+  "chat": {
+    "contact": "مخاطبین چت",
+    "contacts": "مخاطبین",
+    "private": "چت خصوصی",
+    "caption": "نوشته",
+    "showImage": "نمایش تصاویر",
+    "uploadImage": "اپلود عکس",
+    "reply": "::>",
+    "chatRoom": "چت گروهی",
+    "group": "گروه"
+  },
+  "contact": {
+    "new": "  ارتباط جدید",
+    "detail": "جزییات ارتباط ",
+    "edit": "ویرایش ارتباط ",
+    "table": "جدول ارتباطات ",
+    "select": "انتخاب فایل",
+    "preview": "پیش نمایش",
+    "click": "کلیک کنید"
+  },
+  "group": {
+    "new": "گروه جدید",
+    "detail": "جزییات گروه",
+    "edit": "ویرایش گروه",
+    "table": "جدول گروه ها"
+  },
+  "profile": {
+    "title": "اطلاعات کاربر",
+    "basic": "اطلاعات اولیه",
+    "location": "مکان و ادرس",
+    "change": "تغیر رمز"
+  },
+  "setting": {
+    "new": "تنظیمات جدید",
+    "detail": "جزییات تنظیمات",
+    "edit": "ویرایش تنظیمات",
+    "table": "جدول تنظیمات"
+
+  },
+  "user": {
+    "new": "کاربر جدید",
+    "detail": "جزییات کاربر",
+    "edit": "ویرایش کاربر",
+    "table": "جدول کاربران"
+  },
+  "visitor": {
+    "new": "بازدیدکننده جدید",
+    "detail": "جزییات بازدیدکننده",
+    "edit": "ویرایش بازدیدکننده",
+    "table": "جدول بازدیدکننده"
+  },
+  "firstPage": {
+    "option": {
+      "new": "صفحه نخست جدید",
+      "detail": "جزییات صفحه نخست",
+      "edit": "ویرایش صفحه نخست",
+      "table": "جدول صفحه نخست",
+      "upload": "اپلود فایل"
+    },
+    "media": {
+      "new": "محتوی صفحه نخست  جدید",
+      "detail": "جزییات محتوی صفحه نخست ",
+      "edit": "ویرایش محتوی صفحه نخست",
+      "table": "جدول محتوی صفحه نخست",
+      "select": "انتخاب فایل",
+      "preview": "پیش نمایش",
+      "click": "کلیک کنید"
+    }
+  },
+  "": {
+    "category": {
+      "new": "دسته جدید",
+      "detail": "جزییات دسته",
+      "edit": "ویرایش دسته",
+      "table": "جدول دسته ها "
+    },
+    "subCategory": {
+      "new": "زیر دسته جدید",
+      "detail": "جزییات زیر دسته",
+      "edit": "ویرایش زیر دسته",
+      "table": "جدول زیر دسته ها"
+    },
+    "media": {
+      "new": " محتوی  جدید",
+      "detail": "جزییات صفحه محتوی",
+      "edit": "ویرایش صفحه محتوی",
+      "table": "جدول صفحه محتوی",
+      "select": "انتخاب فایل",
+      "preview": "پیش نمایش",
+      "click": "کلیک کنید"
+    },
+    "post": {
+      "new": "خبر جدید",
+      "detail": "جزییات خبر ",
+      "edit": "ویرایش خبر",
+      "table": "جدول خبر",
+      "english": "خبر انگلیسی",
+      "farsi": "خبر فارسی",
+      "list": "لیست فایل ها",
+      "select": "انتخاب عکس",
+      "copy": "کوپی لینک",
+      "file": "فایل :",
+      "category": "دسته ",
+      "subCategory": "زیر دسته",
+      "upload": "اپلود فایل"
+    },
+    "comment": {
+      "new": "کامنت جدید",
+      "detail": "جزییات کامنت  ",
+      "edit": "ویرایش کامنت ",
+      "table": "جدول کامنت ",
+      "comments": "کامنت ها",
+      "newsPost": "پست خبری"
+    }
+  },
+  "layout": {
+    "header": {
+      "dashboard": " داشتبورد",
+      "graph": "نمودار ها",
+      "overView": "پیش دارمد",
+      "accounts": "حساب ها",
+      "groups": " گروه ها",
+      "users": " کاربران",
+      "blog": " بلگ",
+      "news": " خبر ها",
+      "advertisement": " تبلیغات",
+      "firstPage": "صفحه نخست ",
+      "viewOption": " گزینه ها",
+      "communication": "ارتباطات",
+      "chat": " چت",
+      "contact": " ارتباط با ما ",
+      "notifications": " اعلان ها",
+      "allNotifications": "تمامی اعلان ها",
+      "profile": "پروفایل ",
+      "setting": " تنطیمات ",
+      "signOut": " خروج",
+      "visitor": " بازدیدکنندگان",
+      "email": "  ایمیل",
+      "language": "زبان",
+      "page": " صفحه :",
+      "request": "در خواست ",
+      "permissions": "مجوز ها",
+      "permissionUsers": "مجوز های گروهی",
+      "permissionGroups": "مجوز های کاربران"
+    },
+    "footer": {
+      "passage": "تمامی حقوق این ساین مفحوظ است",
+      "link": "Paliz3d.com"
+    }
+  },
+  "activation": {
+    "message": " حساب کاربری فعال نیست "
+  },
+  "dashboard": {
+    "title": " اخرین تغییرات",
+    "chart": "نمودار"
+  },
+  "request": {
+    "category": {
+      "new": "دسته جدید",
+      "detail": "جزییات دسته",
+      "edit": "ویرایش دسته",
+      "table": "جدول دسته ها "
+    },
+    "post": {
+      "new": "درخواست جدید",
+      "detail": "جزییات درخواست  ",
+      "edit": "ویرایش درخواست",
+      "table": "جدول رخواست",
+      "category": "دسته "
+    },
+    "reply": {
+      "message": "مکاتبات در خواست ",
+      "detail": " جزییات درخواست "
+
+    }
+  },
+  "permission": {
+    "new": "مجوز جدید",
+    "detail": "جزییات مجوز",
+    "edit": "ویرایشم مجوز",
+    "table": "جدول مجوز ها"
+  },
+  "permissionUser": {
+    "new": "مجوز کاربر جدید",
+    "detail": "جزییات مجوز کاربر",
+    "edit": "ویرایشم مجوز کاربر ",
+    "table": "جدول مجوز های کاربران"
+  },
+  "permissionGroup": {
+    "new": "مجوز جدید کاربر",
+    "detail": "جزییات مجوزکاربر ",
+    "edit": "ویرایشم مجوزکاربر ",
+    "table": "جدول مجوز ها کاربران"
+  }
+}

@@ -1,0 +1,338 @@
+{
+  "filed": {
+    "link": "Link",
+    "token": "Token",
+    "password": "Password",
+    "passwordConfirm": "Password Confirm",
+    "userName": "Username",
+    "email": "Email",
+    "name": "Name",
+    "title": "Title",
+    "phone": "Phone",
+    "status": "Status",
+    "activate": "Activate",
+    "deActivate": "Deactivate",
+    "message": "Message",
+    "reply": "Reply",
+    "description": "Description",
+    "country": "Country",
+    "city": "City",
+    "address": "Address",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "gender": "Gender",
+    "key": "Key",
+    "value": "Value",
+    "group": "Group",
+    "ip": "Ip",
+    "os": "OS",
+    "lang": "Lang",
+    "lat": "Lat",
+    "viewOption": "Option",
+    "path": "path",
+    "nameEn": "English",
+    "nameFa": "Farsi",
+    "categoryId": "Category",
+    "subCategoryId": "Sub Category",
+    "postId": "Post",
+    "thumbnail": "Thumbnail",
+    "image": "Image",
+    "video": "Video",
+    "titleEn": "Title English",
+    "titleFa": "Title Farsi",
+    "body": "Body",
+    "picture": "Picture",
+    "create": "Created at",
+    "update": "Updated at",
+    "delete": "Deleted at",
+    "code": "َActivate Code",
+    "emailUsername": "Email Or UserName",
+    "emailPhone": "Email Or Phone",
+    "emailPhoneUsername": "Email Or Phone, UserName",
+    "language": "Language",
+    "permissionId": "Permission",
+    "actions": "Actions"
+  },
+  "common": {
+    "confirm": "Confirm",
+    "cancel": "Cancel",
+    "detail": "Detail",
+    "edit": "Edit",
+    "create": "Create",
+    "update": "Update",
+    "delete": "Delete",
+    "remove": "Delete",
+    "submit": "Submit",
+    "doYouWantDelete": "Do you want to Delete Item?",
+    "doYouWantEdit": "Do you want to Edit Item?",
+    "message": "Message",
+    "reply": "Reply",
+    "required": " Filed is required",
+    "canNotBe": "Can not be more then 255 charter ",
+    "notEqual": "Password Confirm is not equal Password",
+    "sortBy": "Sort By",
+    "orderBy": "Order By",
+    "ruleBy": "Rule By",
+    "searchBy": "Search By",
+    "search": "Search",
+    "comments": "Comments",
+    "files": "Files",
+    "previous": "Previous",
+    "next": "next",
+    "messageCreate": "New data saved  successfully",
+    "messageUpdate": "Data updated  Successfully",
+    "sendEmailLink": "Send Activation link",
+    "sendSmsCode": "Send Sms Code",
+    "advanceSearch": "Advance Search",
+    "DoYouWantSearch": "Do You want Search item ?",
+    "field": "Filed",
+    "sign": "Sign",
+    "function": "Function",
+    "value": "Value",
+    "data": "Data",
+    "add": "Add",
+    "addValue": "Add Filed",
+    "removeValue": "Remove Filed",
+    "selectInputMessage": "-- select an option --"
+  },
+  "auth": {
+    "signIn": "Sign In",
+    "signUp": "Sign Up",
+    "forgotPassword": "Forgot password",
+    "rememberMe": "Remember Me",
+    "doNotHave": " Don't you have account?",
+    "register": "Register",
+    "alreadyHave": "Already have account?",
+    "reset": "Reset",
+    "agreeWith": "Agree the terms and policy",
+    "messageRegister": "your are successfully register \n  you need confirm your account via Email or Sms\n  please go to  activation page then check your Sms or Email ",
+    "messageActivate": "congregation account successfully activate\n      after seconds we ll redirect to log in page",
+    "messageForgot": "we send Reset Link  for  you email or Reset Code for you phone",
+    "messageReset": "new password saved successfully",
+    "messageSendSms": "Sms Send it to you  ",
+    "messageSendEmail": "Email Send it to you  ",
+    "activateViaEmail": "Via Email",
+    "activateViaSms": "Via Sms",
+    "doNotRememberPassword": "Don't remember password? ",
+    "resetPassword": "Reset password ",
+    "needResetPassword": "Need reset password?",
+    "needActivateAccount": "Need activate account?",
+    "activation": "Activation",
+    "activationAccount": "Activation account",
+    "resetViaEmail": "Via Email",
+    "resetViaSms": "Via Sms"
+  },
+  "404": {
+    "oops": "Oops!",
+    "title": "404 - Page not found",
+    "message": "The page you are looking for might have been removed had its name changed or is temporarily unavailable."
+  },
+  "403": {
+    "oops": "Oops!",
+    "title": "403 - Forbidden page",
+    "message": "The page you are looking for have been forbidden , it is unavailable."
+  },
+  "advertisement": {
+    "new": "New Advertisement",
+    "detail": "Advertisement Detail",
+    "edit": "Edit Advertisement",
+    "table": "Advertisements Table",
+    "select": "Selected files",
+    "click": "Click Here",
+    "preview": "Preview Image"
+  },
+  "chat": {
+    "contact": "Chat Contact",
+    "contacts": "Contacts",
+    "private": "Private Chat",
+    "caption": "Caption",
+    "showImage": "Show Image",
+    "uploadImage": "Upload Image",
+    "reply": "::>",
+    "chatRoom": "Chat Room",
+    "group": "Group"
+  },
+  "contact": {
+    "new": "New Contact",
+    "detail": "Contact Detail",
+    "edit": "Edit Contact",
+    "table": "Contact Table",
+    "select": "Selected files",
+    "click": "Click Here",
+    "preview": "Preview Image"
+  },
+  "group": {
+    "new": "New Group",
+    "detail": "Group Detail",
+    "edit": "Edit Group",
+    "table": "Groups Table"
+  },
+  "profile": {
+    "title": "User Profile",
+    "basic": "Basic Information",
+    "location": "Location & Address ",
+    "change": "Change Password"
+  },
+  "setting": {
+    "new": "New Setting",
+    "detail": "Setting Detail",
+    "edit": "Edit Setting",
+    "table": "Settings Table"
+  },
+  "user": {
+    "new": "New User",
+    "detail": "User Detail",
+    "edit": "Edit User",
+    "table": "Users Table"
+  },
+  "visitor": {
+    "new": "New Visitor",
+    "detail": " Visitor Detail",
+    "edit": "Edit Visitor",
+    "table": " Visitors Table"
+  },
+  "firstPage": {
+    "option": {
+      "new": "Home Page Option",
+      "detail": "Home Pae Option Detail",
+      "edit": "Edit Home Page Option",
+      "table": " Home Page Options Table",
+      "upload": "Upload File"
+    },
+    "media": {
+      "new": "NewHome Page Media",
+      "detail": " Home Page Media Detail",
+      "edit": "Edit Home Page Media",
+      "table": " Home Page Medias Table",
+      "select": "Selected files",
+      "click": "Click Here",
+      "preview": "Preview Image"
+    }
+  },
+  "news": {
+    "category": {
+      "new": "New Category",
+      "detail": "Category Detail",
+      "edit": "Edit Category",
+      "table": " Categories Table"
+    },
+    "subCategory": {
+      "new": "New  Sub Category",
+      "detail": "Sub Category Detail",
+      "edit": "Edit Sub Category",
+      "table": "Sub Categories Table"
+    },
+    "media": {
+      "new": "New News Media",
+      "detail": " News Media Detail",
+      "edit": "Edit News Media ",
+      "table": " News Medias Table",
+      "select": "Selected files",
+      "click": "Click Here",
+      "preview": "Preview Image"
+    },
+    "post": {
+      "new": "New News Post",
+      "detail": " News Post Detail",
+      "edit": "Edit News Post ",
+      "table": " News Posts Table",
+      "english": "English News",
+      "farsi": "Farsi News",
+      "list": "List Media",
+      "select": "Select Image",
+      "copy": "Copy Link",
+      "file": "File :",
+      "category": "Category",
+      "subCategory": "Sub Category",
+      "upload": "Upload File"
+    },
+    "comment": {
+      "new": "New News Comment",
+      "detail": " News Comment Detail",
+      "edit": "Edit News Comment ",
+      "table": " News Comment Table",
+      "comments": "Comments",
+      "newsPost": "News Post"
+    }
+  },
+  "layout": {
+    "header": {
+      "dashboard": " Dashboard",
+      "graph": " Graphs",
+      "overView": " Over View",
+      "accounts": "Accounts",
+      "groups": " Groups",
+      "users": " Users",
+      "blog": " Blog",
+      "news": " News",
+      "advertisement": " Advertisement",
+      "firstPage": " Home Page",
+      "viewOption": " View Option",
+      "communication": " Communication",
+      "chat": " Chat",
+      "contact": " Contact us",
+      "notifications": " Notifications",
+      "allNotifications": " All notifications",
+      "profile": " Profile",
+      "setting": " Setting",
+      "signOut": " Sign Out",
+      "visitor": " Visitor",
+      "email": "  Email",
+      "language": " Language",
+      "page": " Page:",
+      "request": " Request",
+      "permissions": "Permissions",
+      "permissionUsers": "Users Permissions",
+      "permissionGroups": "Groups Permissions"
+    },
+    "footer": {
+      "passage": "Copyright © 2021 cooladmin. All rights reserved. Template by",
+      "link": "Paliz3d.com"
+    }
+  },
+  "activation": {
+    "message": "Account dose not activate "
+  },
+  "dashboard": {
+    "title": "Last Changes",
+    "chart": "Chart"
+  },
+  "request": {
+    "category": {
+      "new": "New  Category",
+      "detail": "Request Category Detail",
+      "edit": " Edit Request Category",
+      "table": "Request Category Table"
+    },
+    "post": {
+      "new": "New Request Post",
+      "detail": " Request Post Detail",
+      "edit": "Edit Request Post ",
+      "table": " Request Posts Table",
+      "category": "Category"
+    },
+    "reply": {
+      "detail": " Request  Detail",
+      "message": " Request Messages "
+    }
+  },
+  "permission": {
+    "new": "New Permission",
+    "detail": "Permission Detail",
+    "edit": "Edit Permission",
+    "table": "Permissions Table"
+  },
+  "permissionUser": {
+    "new": "New User Permission ",
+    "detail": " User Permission  Detail",
+    "edit": "Edit  User Permission ",
+    "table": " Users Permissions Table"
+  },
+  "permissionGroup": {
+    "new": "New Group Permission",
+    "detail": "Group Permission Detail",
+    "edit": "Edit Group Permission",
+    "table": "Groups Permissions Table"
+  }
+}
+

@@ -1,0 +1,11 @@
+<div
+  *ngFor="let alert of alerts"
+  class="{{cssClass(alert)}}">
+  {{alert.message}}
+  <div *ngFor="let body of (alert.body);let i=index;">
+  {{body }}
+  </div>
+  <button (click)="removeAlert(alert)" type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">×</span>
+  </button>
+</div>

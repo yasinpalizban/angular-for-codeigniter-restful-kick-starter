@@ -1,0 +1,97 @@
+<div class="page-wrapper">
+  <div class="page-content--bge5">
+    <div class="container">
+      <div class="login-wrap">
+        <div class="login-content">
+          <div class="login-logo">
+<!--            <a href="#">-->
+<!--              <img src="assets/images/icon/logo.png" alt="CoolAdmin">-->
+<!--            </a>-->
+            <h4> {{ 'auth.signIn' | translate }}</h4>
+          </div>
+          <div>
+
+          </div>
+          <div class="login-form">
+            <form (ngSubmit)="onSubmit(myform)" #myform="ngForm">
+              <div class="form-group">
+                <app-alert></app-alert>
+              </div>
+              <div class="form-group">
+                <label> {{ 'filed.emailPhoneUsername' | translate }}</label>
+                <input class="au-input au-input--full"
+                       type="text"
+                       name="login"
+                       placeholder="{{ 'filed.emailPhoneUsername' | translate }}"
+                       required
+                       ngModel
+                       #login="ngModel"
+                       [ngClass]="{ 'is-invalid':   login.invalid && login.touched }"
+                >
+
+
+                <div *ngIf="myform.submitted && login.invalid" class="invalid-feedback">
+                  <div *ngIf="login.errors?.required" class="pull-right">{{ 'common.required' | translate }}</div>
+                </div>
+
+              </div>
+              <div class="form-group">
+                <label>{{ 'filed.password' | translate }}</label>
+                <input class="au-input au-input--full "
+                       type="password"
+                       name="password"
+                       placeholder="{{ 'filed.password' | translate }}"
+                       required
+                       ngModel
+                       #password="ngModel"
+                       [ngClass]="{ 'is-invalid':  password.invalid && password.touched }"
+                >
+                <div *ngIf="myform.submitted && password.invalid" class="invalid-feedback">
+                  <div *ngIf="password.errors?.required" class="pull-right">{{ 'common.required' | translate }}</div>
+                </div>
+              </div>
+              <hr>
+
+              <div class="login-checkbox">
+                <label>
+                  <input class="pull-right"
+                         type="checkbox"
+                         name="remember"
+                         ngModel
+                         #rememb="ngModel"
+                         [(ngModel)]="remember">{{ 'auth.rememberMe' | translate }}
+                </label>
+<!--                <label>-->
+<!--                  <a [routerLink]="['../forgot']">{{ 'auth.forgotPassword' | translate }}</a>-->
+<!--                </label>-->
+              </div>
+              <button
+
+                class="au-btn au-btn--block au-btn--green m-b-20"
+                type="submit">{{ 'auth.signIn' | translate }}
+              </button>
+
+            </form>
+            <div class="card" style=" border: none; padding: 0; margin: 0">
+
+              <div class="card-body">
+                <button [routerLink]="['../sign-up']" data-toggle="tooltip" tooltip=" {{ 'auth.doNotHave' | translate }}" type="button" class="btn btn-link btn-sm">
+                   {{ 'auth.signUp' | translate }}</button>
+
+                <button [routerLink]="['../forgot']" data-toggle="tooltip" tooltip="  {{ 'auth.doNotRememberPassword' | translate }}" type="button" class="btn btn-link btn-sm">
+                  {{ 'auth.forgotPassword' | translate }}</button>
+                <button [routerLink]="['../reset-password']" data-toggle="tooltip" tooltip="   {{ 'auth.needResetPassword' | translate }}" type="button" class="btn btn-link btn-sm">
+                  {{ 'auth.resetPassword' | translate }}</button>
+                <button [routerLink]="['../activation']" data-toggle="tooltip" tooltip="   {{ 'auth.needActivateAccount' | translate }}" type="button" class="btn btn-link btn-sm">
+                  {{ 'auth.activationAccount' | translate }}</button>
+                <button type="button" class="btn btn-link btn-sm" (click)="loout()">logout</button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

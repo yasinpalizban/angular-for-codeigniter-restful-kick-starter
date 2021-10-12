@@ -1,0 +1,227 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="">
+
+      <form class="form-header" style="justify-content: flex-end;" novalidate (ngSubmit)="onSubmit()"
+            [formGroup]="formGroup">
+
+
+      <input
+          class="au-input au-input--style2 col-md-6"
+          type="text"
+          id="_key"
+          name="_key"
+          formControlName="_key"
+          required
+
+          [ngClass]="{ 'is-invalid': formGroup.controls._key.invalid  && formGroup.controls._key.touched }"
+          placeholder="{{ 'common.searchBy' | translate }} : {{sortValue}}">
+        <button tooltip="{{ 'common.search' | translate }}" class="au-btn--submit" type="submit">
+          <fa-icon   [icon]="faIcon.faSearch" ></fa-icon>
+        </button>
+        <button tooltip="{{ 'permission.new' | translate }}" (click)="onNewItem()" class="au-btn au-btn-icon au-btn--green au-btn--small">
+          <fa-icon   [icon]="faIcon.faPlus" ></fa-icon>
+        </button>
+
+      </form>
+
+
+    </div>
+
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class=" " style="  display: inline-flex; margin-top: 15px ;margin-bottom: 15px">
+
+      <div class="rs-select2--light ">
+        <button (click)="onOpenModal(templateSearch)" tooltip="{{ 'common.advanceSearch' | translate }}"
+                class="btn btn-info">
+          <fa-icon   [icon]="faIcon.faEllipsisH" ></fa-icon>
+        </button>
+      </div>
+      <div class="rs-select2--light ">
+
+        <ng-select2 [(ngModel)]="sortValue" placeholder="{{ 'common.sortBy' | translate }}"
+                    (ngModelChange)="onChangeDataTable()"
+                    [data]="sortData"></ng-select2>
+
+      </div>
+      <div class="rs-select2--light ">
+        <ng-select2 [(ngModel)]="orderValue" placeholder="{{ 'common.orderBy' | translate }}"
+                    (ngModelChange)="onChangeDataTable()"
+                    [data]="orderData"></ng-select2>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<ng-template #templateSearch>
+  <form novalidate (ngSubmit)="onSubmitAdvanceSearch()" [formGroup]="formAdvanceSearch">
+
+    <div class="modal-header">
+      <fa-icon   [icon]="faIcon.faSearch" ></fa-icon>
+      <h4 class="modal-title pull-left">{{ 'common.advanceSearch' | translate }}</h4>
+
+      <button type="button" class="close pull-right" aria-label="Close" (click)="onModalHide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p>{{ 'common.DoYouWantSearch' | translate }} <strong class="text-danger"></strong></p>
+      <div class="modal-footer" style="border: unset !important; padding: unset !important;">
+
+
+        <button type="button" class="btn btn-success pull-right"
+                (click)="onAddField()" tooltip="{{ 'common.addValue' | translate }}">
+          <fa-icon   [icon]="faIcon.faPlus" ></fa-icon>
+        </button>
+
+      </div>
+
+
+      <div class="form-group">
+        <app-alert></app-alert>
+      </div>
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-addon">{{ 'common.function' | translate }}</div>
+          <select
+
+            id="_function"
+            name="_function"
+            class="form-control"
+            formControlName="_function"
+            required
+            [ngClass]="{ 'is-invalid': formAdvanceSearch.controls._function.invalid  && formAdvanceSearch.controls._function.touched }"
+
+          >
+
+            <option *ngFor="let funs  of this.functions|keyvalue" value="{{funs.value}}">{{funs.key}}</option>
+
+          </select>
+          <div class="input-group-addon">
+            <fa-icon   [icon]="faIcon.faAsterisk" ></fa-icon>
+          </div>
+
+          <div
+            *ngIf=" !submitted2 &&formAdvanceSearch.controls._function.invalid ||formAdvanceSearch.controls._function.touched"
+            class="invalid-feedback">
+            <div *ngIf="formAdvanceSearch.controls._function.hasError('required')"
+                 class="pull-right">{{ 'common.required' | translate }}
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+
+      <div class="row" *ngFor="let ctl of advanceSearchData.controls;  let i = index"
+           formArrayName="_data">
+        <div class="col-6">
+          <div class="form-group" [formGroupName]="i">
+            <div class="input-group">
+              <label class="input-group-addon">{{ 'common.field' | translate }}</label>
+              <select
+
+                id="_field{{i}}"
+                name="_field"
+                class="form-control"
+                formControlName="_field"
+                required
+                [ngClass]="{ 'is-invalid': ctl.controls._field.invalid  && ctl.controls._field.touched }"
+
+              >
+                <option *ngFor="let data  of this. sortData" value="{{data.id}}">{{data.text}}</option>
+
+              </select>
+
+              <div
+                *ngIf=" !submitted2 &&ctl.controls._field.invalid ||ctl.controls._field.touched"
+                class="invalid-feedback">
+                <div *ngIf="ctl.controls._field.hasError('required')"
+                     class="pull-right">{{ 'common.required' | translate }}
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-6">
+          <div class="form-group" [formGroupName]="i">
+            <div class="input-group">
+              <div class="input-group-addon">{{ 'common.value' | translate }}</div>
+              <input type="text"
+                     id="_value{{i}}"
+                     name="_value"
+                     class="form-control"
+                     formControlName="_value"
+                     required
+
+                     [ngClass]="{ 'is-invalid': ctl.controls._value.invalid  && ctl.controls._value.touched }"
+              >
+
+              <div
+                *ngIf=" !submitted2 &&ctl.controls._value.invalid ||ctl.controls._value.touched"
+                class="invalid-feedback">
+                <div *ngIf="ctl.controls._value.hasError('required')"
+                     class="pull-right">{{ 'common.required' | translate }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6" [formGroupName]="i">
+          <div class="form-group">
+            <div class="input-group">
+              <div class="input-group-addon">{{ 'common.sign' | translate }}</div>
+              <select
+
+                id="_sign{{i}}"
+                name="_sign"
+                class="form-control"
+                formControlName="_sign"
+                required
+                [ngClass]="{ 'is-invalid': ctl.controls._sign.invalid  && ctl.controls._sign.touched }"
+
+              >
+                <option *ngFor="let op  of this.operators" value="{{op}}">{{op}}</option>
+
+              </select>
+
+
+              <div
+                *ngIf=" !submitted2 &&ctl.controls._sign.invalid ||ctl.controls._sign.touched"
+                class="invalid-feedback">
+                <div *ngIf="ctl.controls._sign.hasError('required')"
+                     class="pull-right">{{ 'common.required' | translate }}
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+
+        <div class="col-6">
+          <button type="button" class="btn btn-danger btn pull-right" style="width: 100%"
+                  (click)="onRemoveField(i)" tooltip="{{ 'common.removeValue' | translate }}">
+            <fa-icon   [icon]="faIcon.faTrash" ></fa-icon>
+          </button>
+        </div>
+      </div>
+
+
+    </div>
+
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" (click)="onModalHide()">{{ 'common.cancel' | translate }}</button>
+      <button [disabled]="formAdvanceSearch.invalid" type="submit" class="btn btn-primary">{{ 'common.confirm' | translate }}</button>
+    </div>
+  </form>
+
+</ng-template>

@@ -1,0 +1,512 @@
+<aside class="menu-sidebar2">
+  <div class="logo">
+    <a href="#">
+      <img src="../../../../../assets/images/icon/logo-white.png" alt="Cool Admin"/>
+    </a>
+  </div>
+  <div class="menu-sidebar2__content js-scrollbar1">
+    <div class="account2">
+      <div class="image img-cir img-120">
+        <img class="rounded-circle mx-auto d-block " [src]="this.getSantizeUrl(this.image)" alt="John Doe"/>
+      </div>
+      <h4 class="name">{{this.userName}}</h4>
+      <a>{{this.fullName}}</a>
+    </div>
+    <nav class="navbar-sidebar2">
+      <ul class="list-unstyled navbar__list">
+
+
+        <li *ngIf="limitUserMenuLink('dashboard')" class="has-sub">
+          <a class="js-arrow" (click)="isLeftArrow.dashboard = !isLeftArrow.dashboard"
+             [attr.aria-expanded]="!isLeftArrow.dashboard" aria-controls="collapseLeftArrow0">
+            <fa-icon [icon]="faIcon.faTachometerAlt"></fa-icon>
+            {{ 'layout.header.dashboard' | translate }}
+            <span [ngClass]="[isLeftArrow.dashboard ? 'arrow':'arrow up']">
+                                  <fa-icon [icon]="faIcon.faAngleDown"></fa-icon>
+                                </span>
+          </a>
+          <ul id="collapseLeftArrow0" [collapse]="isLeftArrow.dashboard" [isAnimated]="true"
+              class="list-unstyled navbar__sub-list js-sub-list">
+            <li>
+              <a [routerLink]="[links.overView]">
+                <fa-icon [icon]="faIcon.faList"></fa-icon>
+                {{ 'layout.header.overView' | translate }}</a>
+            </li>
+            <li>
+              <a [routerLink]="[links.graph]">
+                <fa-icon [icon]="faIcon.faChartArea"></fa-icon>
+                {{ 'layout.header.graph' | translate }}</a>
+            </li>
+
+          </ul>
+        </li>
+        <li *ngIf="limitUserMenuLink('account')" class="has-sub">
+          <a class="js-arrow" (click)="isLeftArrow.account = !isLeftArrow.account"
+             [attr.aria-expanded]="!isLeftArrow.account" aria-controls="collapseLeftArrow1">
+            <fa-icon [icon]="faIcon.faUsers"></fa-icon>
+            {{ 'layout.header.accounts' | translate }}
+            <span [ngClass]="[isLeftArrow.account ? 'arrow':'arrow up']">
+                                    <fa-icon [icon]="faIcon.faAngleDown"></fa-icon>
+                                </span>
+          </a>
+          <ul id="collapseLeftArrow1" [collapse]="isLeftArrow.account" [isAnimated]="true"
+              class="list-unstyled navbar__sub-list js-sub-list">
+            <li>
+              <a [routerLink]="[links.group]">
+                <fa-icon [icon]="faIcon.faUserFriends"></fa-icon>
+                {{ 'layout.header.groups' | translate }}</a>
+            </li>
+            <li>
+              <a [routerLink]="[links.users]">
+                <fa-icon [icon]="faIcon.faUserPlus"></fa-icon>
+                {{ 'layout.header.users' | translate }}</a>
+            </li>
+            <li>
+              <a [routerLink]="[links.permission]">
+                <fa-icon [icon]="faIcon.faEye"></fa-icon>
+                {{ 'layout.header.permissions' | translate }}</a>
+            </li>
+            <li>
+              <a [routerLink]="[links.groupPermission]">
+                <fa-icon [icon]="faIcon.faRandom"></fa-icon>
+                {{ 'layout.header.permissionGroups' | translate }}</a>
+            </li>
+            <li>
+              <a [routerLink]="[links.userPermission]">
+                <fa-icon [icon]="faIcon.faRetweet"></fa-icon>
+                {{ 'layout.header.permissionUsers' | translate }}</a>
+            </li>
+
+
+          </ul>
+        </li>
+        <li *ngIf="limitUserMenuLink('blog')" class="active has-sub">
+          <a class="js-arrow" (click)="isLeftArrow.news = !isLeftArrow.news"
+             [attr.aria-expanded]="!isLeftArrow.news" aria-controls="collapseLeftArrow2">
+            <fa-icon [icon]="faIcon.faBlog"></fa-icon>
+            {{ 'layout.header.blog' | translate }}
+            <span [ngClass]="[isLeftArrow.news ? 'arrow':'arrow up']">
+                                    <fa-icon [icon]="faIcon.faAngleDown"></fa-icon>
+                                </span>
+          </a>
+          <ul id="collapseLeftArrow2" [collapse]="isLeftArrow.news" [isAnimated]="true"
+              class="list-unstyled navbar__sub-list js-sub-list">
+            <li>
+              <a [routerLink]="[links.newsPost]">
+                <fa-icon [icon]="faIcon.faNewspaper"></fa-icon>
+                {{ 'layout.header.news' | translate }} </a>
+            </li>
+            <li>
+              <a [routerLink]="[links.advertisement]">
+                <fa-icon [icon]="faIcon.faShoppingCart"></fa-icon>
+                {{ 'layout.header.advertisement' | translate }}  </a>
+            </li>
+
+
+          </ul>
+        </li>
+
+        <li *ngIf="limitUserMenuLink('firstPage')" class="active has-sub">
+          <a class="js-arrow" (click)="isLeftArrow.homePage = !isLeftArrow.homePage"
+             [attr.aria-expanded]="!isLeftArrow.homePage" aria-controls="collapseLeftArrow3">
+            <fa-icon [icon]="faIcon.faDesktop"></fa-icon>
+            {{ 'layout.header.firstPage' | translate }}
+            <span [ngClass]="[isLeftArrow.homePage ? 'arrow':'arrow up']">
+                                  <fa-icon [icon]="faIcon.faAngleDown"></fa-icon>
+                                </span>
+          </a>
+          <ul id="collapseLeftArrow3" [collapse]="isLeftArrow.homePage" [isAnimated]="true"
+              class="list-unstyled navbar__sub-list js-sub-list">
+            <li>
+              <a [routerLink]="[links.viewOption]">
+                <fa-icon [icon]="faIcon.faImage"></fa-icon>
+                {{ 'layout.header.viewOption' | translate }} </a>
+            </li>
+
+
+          </ul>
+        </li>
+
+
+        <li *ngIf="limitUserMenuLink('communicate')" class="active has-sub">
+          <a class="js-arrow" (click)="isLeftArrow.communication = !isLeftArrow.communication"
+             [attr.aria-expanded]="!isLeftArrow.communication" aria-controls="collapseLeftArrow4">
+            <fa-icon [icon]="faIcon.faInbox"></fa-icon>
+            {{ 'layout.header.communication' | translate }}
+            <span [ngClass]="[isLeftArrow.communication? 'arrow':'arrow up']">
+                                   <fa-icon [icon]="faIcon.faAngleDown"></fa-icon>
+                                </span>
+          </a>
+          <ul id="collapseLeftArrow4" [collapse]="isLeftArrow.communication" [isAnimated]="true"
+              class="list-unstyled navbar__sub-list js-sub-list">
+            <li>
+              <a [routerLink]="[links.chat]">
+                <fa-icon [icon]="faIcon.faComments"></fa-icon>
+                {{ 'layout.header.chat' | translate }} </a>
+            </li>
+
+            <li>
+              <a [routerLink]="[links.contact]">
+                <fa-icon [icon]="faIcon.faEnvelope"></fa-icon>
+                {{ 'layout.header.contact' | translate }} </a>
+            </li>
+
+          </ul>
+        </li>
+
+        <li>
+          <a [routerLink]="[links.request]">
+            <fa-icon [icon]="faIcon.faBookmark"></fa-icon>
+            {{ 'layout.header.request' | translate }}</a>
+          <span class="inbox-num">3</span>
+        </li>
+
+
+      </ul>
+    </nav>
+  </div>
+</aside>
+<!-- HEADER DESKTOP-->
+<header class="header-desktop2">
+  <div class="section__content section__content--p">
+    <div class="container-fluid">
+      <div class="header-wrap2">
+        <div class="logo d-block d-lg-none">
+          <a href="#">
+            <img src="../../../../../assets/images/icon/logo-white.png" alt="CoolAdmin"/>
+          </a>
+        </div>
+        <div class="header-button2 ">
+
+          <!--          <div class="header-button-item js-item-menu" (click)="toggleDropDown('search')"-->
+          <!--               [ngClass]="{ 'show-dropdown':isSearch }">-->
+          <!--            <i class="fa fa-search"></i>-->
+          <!--            <div class="search-dropdown js-dropdown">-->
+          <!--              <form action="">-->
+          <!--                <input class="au-input au-input&#45;&#45;full au-input&#45;&#45;h65" type="text"-->
+          <!--                       placeholder="Search for datas &amp; reports..."/>-->
+          <!--                <span class="search-dropdown__icon">-->
+          <!--                                                <i class="fa fa-search"></i>-->
+          <!--                                            </span>-->
+          <!--              </form>-->
+          <!--            </div>-->
+          <!--          </div>-->
+          <div class="header-button-item has-noti js-item-menu" (click)="toggleDropDown('notify')"
+               [ngClass]="{ 'show-dropdown':isNotify }">
+            <fa-icon [icon]="faIcon.faBell"></fa-icon>
+            <div class="notifi-dropdown js-dropdown">
+              <div class="notifi__title">
+                <p># {{this.notify.length}} {{'layout.header.notifications' | translate}}</p>
+              </div>
+
+              <div *ngFor="let noty of this.notify;let i=index">
+
+                <div class="notifi__item">
+                  <div class=" img-cir img-40"
+                       [ngClass]="this.appendColorIndex(i)"
+                  >
+<!--                    <fa-icon  [icon]="faIcon.faBell"></fa-icon>-->
+                  </div>
+                  <div class="content">
+                    <p>{{noty.message}}({{noty.counter!}})</p>
+                    <span class="date">{{noty.date!}}</span>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="notifi__footer">
+                <a>{{ 'layout.header.allNotifications' | translate }}</a>
+              </div>
+            </div>
+          </div>
+          <div class="header-button-item js-item-menu d-lg-none" (click)="toggleDropDown('leftSideBar')">
+            <fa-icon [icon]="faIcon.faBars"></fa-icon>
+          </div>
+
+          <div class="header-button-item mr-0 js-sidebar-btn  d-none d-lg-block " (click)="toggleDropDown('rightSideBar')"
+          >
+            <fa-icon [icon]="faIcon.faCog"></fa-icon>
+          </div>
+          <div id="collapseRightIdeBar"
+
+               [ngClass]="{'show-sidebar':isRightSidebar}"
+
+               class="setting-menu js-right-sidebar  d-lg-block">
+            <div class="account-dropdown__body">
+              <div class="account-dropdown__item">
+                <a [routerLink]="[links.profile]">
+                  <fa-icon [icon]="faIcon.faUserCircle"></fa-icon>
+                  {{ 'layout.header.profile' | translate }}</a>
+              </div>
+              <div class="account-dropdown__item">
+                <a [routerLink]="[links.setting]">
+                  <fa-icon [icon]="faIcon.faTools"></fa-icon>
+                  {{ 'layout.header.setting' | translate }} </a>
+              </div>
+
+              <div class="account-dropdown__item">
+                <a href="#" (click)="onSignOut()">
+                  <fa-icon [icon]="faIcon.faSignOutAlt"></fa-icon>
+                  {{ 'layout.header.signOut' | translate }} </a>
+              </div>
+            </div>
+            <div class="account-dropdown__body">
+              <div class="account-dropdown__item">
+                <a [routerLink]="[this.links.visitor]">
+                  <fa-icon [icon]="faIcon.faGlobe"></fa-icon>
+                  {{ 'layout.header.visitor' | translate }} </a>
+              </div>
+
+              <div class="account-dropdown__item">
+                <a (click)="changeLanguage()">
+                  <fa-icon [icon]="faIcon.faLanguage"></fa-icon>
+                  {{ 'layout.header.language' | translate }} </a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<aside class=" menu-sidebar2   js-right-sidebar  d-block  d-lg-none "
+       [ngClass]="{ 'show-sidebar':isLeftSidebar }"
+
+>
+  <div class="logo">
+
+  </div>
+  <div class="menu-sidebar2__content js-scrollbar2">
+    <div class="account2">
+      <div class="image img-cir img-120">
+        <img class="rounded-circle mx-auto d-block " [src]="this.getSantizeUrl(this.image)" alt="John Doe"/>
+      </div>
+      <h4 class="name">{{this.userName}}</h4>
+      <a>{{this.fullName}}</a>
+    </div>
+    <nav class="navbar-sidebar2">
+      <ul class="list-unstyled navbar__list">
+        <li  class="has-sub">
+          <a class="js-arrow" (click)="isLeftArrow.setting = !isLeftArrow.setting"
+             [attr.aria-expanded]="!isLeftArrow.setting" aria-controls="collapseLeftArrow00">
+            <fa-icon [icon]="faIcon.faUserCog"></fa-icon>
+            {{ 'layout.header.setting' | translate }}
+            <span [ngClass]="[isLeftArrow.setting ? 'arrow':'arrow up']">
+                                  <fa-icon [icon]="faIcon.faAngleDown"></fa-icon>
+                                </span>
+          </a>
+          <ul id="collapseLeftArrow00" [collapse]="isLeftArrow.setting" [isAnimated]="true"
+              class="list-unstyled navbar__sub-list js-sub-list">
+            <li>
+              <a [routerLink]="[links.profile]">
+                <fa-icon [icon]="faIcon.faUserCircle"></fa-icon>
+                {{ 'layout.header.profile' | translate }}</a>
+            </li>
+            <li>
+              <a [routerLink]="[links.setting]">
+                <fa-icon [icon]="faIcon.faCog"></fa-icon>
+                {{ 'layout.header.setting' | translate }}</a>
+            </li>
+            <li>
+              <a  (click)="onSignOut()">
+                <fa-icon [icon]="faIcon.faSignOutAlt"></fa-icon>
+                {{ 'layout.header.signOut' | translate }}</a>
+            </li>
+            <li>
+              <a [routerLink]="[links.visitor]">
+                <fa-icon [icon]="faIcon.faGlobe"></fa-icon>
+                {{ 'layout.header.visitor' | translate }}</a>
+            </li>
+            <li>
+              <a (click)="changeLanguage()">
+                <fa-icon [icon]="faIcon.faLanguage"></fa-icon>
+                {{ 'layout.header.language' | translate }}</a>
+            </li>
+          </ul>
+        </li>
+
+        <li *ngIf="limitUserMenuLink('dashboard')" class="has-sub">
+          <a class="js-arrow" (click)="isLeftArrow.dashboard = !isLeftArrow.dashboard"
+             [attr.aria-expanded]="!isLeftArrow.dashboard" aria-controls="collapseLeftArrow0">
+            <fa-icon [icon]="faIcon.faTachometerAlt"></fa-icon>
+            {{ 'layout.header.dashboard' | translate }}
+            <span [ngClass]="[isLeftArrow.dashboard ? 'arrow':'arrow up']">
+                                  <fa-icon [icon]="faIcon.faAngleDown"></fa-icon>
+                                </span>
+          </a>
+          <ul id="collapseLeftArrow0" [collapse]="isLeftArrow.dashboard" [isAnimated]="true"
+              class="list-unstyled navbar__sub-list js-sub-list">
+            <li>
+              <a [routerLink]="[links.overView]">
+                <fa-icon [icon]="faIcon.faList"></fa-icon>
+                {{ 'layout.header.overView' | translate }}</a>
+            </li>
+            <li>
+              <a [routerLink]="[links.graph]">
+                <fa-icon [icon]="faIcon.faChartArea"></fa-icon>
+                {{ 'layout.header.graph' | translate }}</a>
+            </li>
+
+          </ul>
+        </li>
+        <li *ngIf="limitUserMenuLink('account')" class="has-sub">
+          <a class="js-arrow" (click)="isLeftArrow.account = !isLeftArrow.account"
+             [attr.aria-expanded]="!isLeftArrow.account" aria-controls="collapseLeftArrow1">
+            <fa-icon [icon]="faIcon.faUsers"></fa-icon>
+            {{ 'layout.header.accounts' | translate }}
+            <span [ngClass]="[isLeftArrow.account ? 'arrow':'arrow up']">
+                                    <fa-icon [icon]="faIcon.faAngleDown"></fa-icon>
+                                </span>
+          </a>
+          <ul id="collapseLeftArrow1" [collapse]="isLeftArrow.account" [isAnimated]="true"
+              class="list-unstyled navbar__sub-list js-sub-list">
+            <li>
+              <a [routerLink]="[links.group]">
+                <fa-icon [icon]="faIcon.faUserFriends"></fa-icon>
+                {{ 'layout.header.groups' | translate }}</a>
+            </li>
+            <li>
+              <a [routerLink]="[links.users]">
+                <fa-icon [icon]="faIcon.faUserPlus"></fa-icon>
+                {{ 'layout.header.users' | translate }}</a>
+            </li>
+            <li>
+              <a [routerLink]="[links.permission]">
+                <fa-icon [icon]="faIcon.faEye"></fa-icon>
+                {{ 'layout.header.permissions' | translate }}</a>
+            </li>
+            <li>
+              <a [routerLink]="[links.groupPermission]">
+                <fa-icon [icon]="faIcon.faRandom"></fa-icon>
+                {{ 'layout.header.permissionGroups' | translate }}</a>
+            </li>
+            <li>
+              <a [routerLink]="[links.userPermission]">
+                <fa-icon [icon]="faIcon.faRetweet"></fa-icon>
+                {{ 'layout.header.permissionUsers' | translate }}</a>
+            </li>
+
+
+          </ul>
+        </li>
+        <li *ngIf="limitUserMenuLink('blog')" class="active has-sub">
+          <a class="js-arrow" (click)="isLeftArrow.news = !isLeftArrow.news"
+             [attr.aria-expanded]="!isLeftArrow.news" aria-controls="collapseLeftArrow2">
+            <fa-icon [icon]="faIcon.faBlog"></fa-icon>
+            {{ 'layout.header.blog' | translate }}
+            <span [ngClass]="[isLeftArrow.news ? 'arrow':'arrow up']">
+                                    <fa-icon [icon]="faIcon.faAngleDown"></fa-icon>
+                                </span>
+          </a>
+          <ul id="collapseLeftArrow2" [collapse]="isLeftArrow.news" [isAnimated]="true"
+              class="list-unstyled navbar__sub-list js-sub-list">
+            <li>
+              <a [routerLink]="[links.newsPost]">
+                <fa-icon [icon]="faIcon.faNewspaper"></fa-icon>
+                {{ 'layout.header.news' | translate }} </a>
+            </li>
+            <li>
+              <a [routerLink]="[links.advertisement]">
+                <fa-icon [icon]="faIcon.faShoppingCart"></fa-icon>
+                {{ 'layout.header.advertisement' | translate }}  </a>
+            </li>
+
+
+          </ul>
+        </li>
+
+        <li *ngIf="limitUserMenuLink('firstPage')" class="active has-sub">
+          <a class="js-arrow" (click)="isLeftArrow.homePage = !isLeftArrow.homePage"
+             [attr.aria-expanded]="!isLeftArrow.homePage" aria-controls="collapseLeftArrow3">
+            <fa-icon [icon]="faIcon.faDesktop"></fa-icon>
+            {{ 'layout.header.firstPage' | translate }}
+            <span [ngClass]="[isLeftArrow.homePage ? 'arrow':'arrow up']">
+                                  <fa-icon [icon]="faIcon.faAngleDown"></fa-icon>
+                                </span>
+          </a>
+          <ul id="collapseLeftArrow3" [collapse]="isLeftArrow.homePage" [isAnimated]="true"
+              class="list-unstyled navbar__sub-list js-sub-list">
+            <li>
+              <a [routerLink]="[links.viewOption]">
+                <fa-icon [icon]="faIcon.faImage"></fa-icon>
+                {{ 'layout.header.viewOption' | translate }} </a>
+            </li>
+
+
+          </ul>
+        </li>
+
+
+        <li *ngIf="limitUserMenuLink('communicate')" class="active has-sub">
+          <a class="js-arrow" (click)="isLeftArrow.communication = !isLeftArrow.communication"
+             [attr.aria-expanded]="!isLeftArrow.communication" aria-controls="collapseLeftArrow4">
+            <fa-icon [icon]="faIcon.faInbox"></fa-icon>
+            {{ 'layout.header.communication' | translate }}
+            <span [ngClass]="[isLeftArrow.communication? 'arrow':'arrow up']">
+                                   <fa-icon [icon]="faIcon.faAngleDown"></fa-icon>
+                                </span>
+          </a>
+          <ul id="collapseLeftArrow4" [collapse]="isLeftArrow.communication" [isAnimated]="true"
+              class="list-unstyled navbar__sub-list js-sub-list">
+            <li>
+              <a [routerLink]="[links.chat]">
+                <fa-icon [icon]="faIcon.faComments"></fa-icon>
+                {{ 'layout.header.chat' | translate }} </a>
+            </li>
+
+            <li>
+              <a [routerLink]="[links.contact]">
+                <fa-icon [icon]="faIcon.faEnvelope"></fa-icon>
+                {{ 'layout.header.contact' | translate }} </a>
+            </li>
+
+          </ul>
+        </li>
+
+        <li>
+          <a [routerLink]="[links.request]">
+            <fa-icon [icon]="faIcon.faBookmark"></fa-icon>
+            {{ 'layout.header.request' | translate }}</a>
+          <span class="inbox-num">3</span>
+        </li>
+
+
+      </ul>
+    </nav>
+  </div>
+</aside>
+
+<!-- END HEADER DESKTOP-->
+
+
+<!-- BREADCRUMB-->
+<section class="au-breadcrumb m-t-75">
+  <div class="section__content section__content--p30">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="au-breadcrumb-content">
+            <div class="au-breadcrumb-left">
+              <span class="au-breadcrumb-span"> {{ 'layout.header.page' | translate }}</span>
+              <ul class="list-unstyled list-inline au-breadcrumb__list">
+                <li *ngFor="let ex of  explodeLink;" class="list-inline-item active">
+                  <a href="{{pathLink}}">{{ex}}</a>
+                </li>
+
+              </ul>
+            </div>
+            <!--            <button class="au-btn au-btn-icon au-btn&#45;&#45;green">-->
+            <!--              <i class="fa fa-plus"></i>add item-->
+            <!--            </button>-->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+

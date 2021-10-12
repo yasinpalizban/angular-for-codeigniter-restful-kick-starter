@@ -1,0 +1,156 @@
+
+<form novalidate (ngSubmit)="onSubmit()" [formGroup]="formGroup">
+
+
+  <div class="form-group">
+    <app-alert></app-alert>
+  </div>
+  <div class="form-group">
+    <app-alert></app-alert>
+  </div>
+  <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-addon">{{ 'filed.group' | translate }}</div>
+      <select
+        (change)="onChangeGroup($event)"
+
+        class="form-control"
+      >
+        <option disabled selected value>{{ 'common.selectInputMessage' | translate }}</option>
+        <option *ngFor="let group of this.groupRows?.data; let i=index" value="{{group.name}}">{{group.name}}</option>
+
+      </select>
+      <div class="input-group-addon">
+        <fa-icon [icon]="faIcon.faAsterisk"></fa-icon>
+      </div>
+
+
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-addon">{{ 'filed.userName' | translate }}</div>
+      <select
+
+        id="userId"
+        name="userId"
+        class="form-control"
+        formControlName="userId"
+        required
+        [ngClass]="{ 'is-invalid': formGroup.controls.userId.invalid  && formGroup.controls.userId.touched }"
+
+      >
+        <option disabled  value>{{ 'common.selectInputMessage' | translate }}</option>
+        <option  selected value="{{this.permissionUserDetail.data![0].userId}}">{{this.permissionUserDetail.data![0].username+' ('+this.permissionUserDetail.data![0].firstName+'  '+this.permissionUserDetail.data![0].lastName+ ')'}}</option>
+        <option *ngFor="let user of this.usersRows?.data; let i=index" value="{{user.id}}">{{user.username+' ('+user.firstName+'  '+user.lastName+ ')'}}</option>
+
+      </select>
+      <div class="input-group-addon">
+        <fa-icon [icon]="faIcon.faAsterisk"></fa-icon>
+      </div>
+
+      <div
+        *ngIf=" !submitted &&formGroup.controls.userId.invalid ||formGroup.controls.userId.touched"
+        class="invalid-feedback">
+        <div *ngIf="formGroup.controls.userId.hasError('required')"
+             class="pull-right"> {{ 'common.required' | translate }}
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-addon">{{ 'filed.permissionId' | translate }}</div>
+      <select
+
+        id="permissionId"
+        name="permissionId"
+        class="form-control"
+        formControlName="permissionId"
+        required
+        [ngClass]="{ 'is-invalid': formGroup.controls.permissionId.invalid  && formGroup.controls.permissionId.touched }"
+
+      >
+        <option disabled selected value>{{ 'common.selectInputMessage' | translate }}</option>
+        <option *ngFor="let permission of this.permissionRows?.data; let i=index"
+                value="{{permission.id}}">{{permission.name}}</option>
+
+      </select>
+      <div class="input-group-addon">
+        <fa-icon [icon]="faIcon.faAsterisk"></fa-icon>
+      </div>
+
+      <div
+        *ngIf=" !submitted &&formGroup.controls.permissionId.invalid ||formGroup.controls.permissionId.touched"
+        class="invalid-feedback">
+        <div *ngIf="formGroup.controls.permissionId.hasError('required')"
+             class="pull-right"> {{ 'common.required' | translate }}
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-addon">{{ 'filed.actions' | translate }}</div>
+
+      <div class="form-control form-check-inline form-check" style="border: none">
+        <!--        <label *ngFor="let act of this.actionsArray; let i = index"-->
+        <!--               for="inline-checkbox1"-->
+        <!--               class="switch switch-text switch-primary switch-pill m-r-10 m-l-20">-->
+        <!--          <input-->
+        <!--            (change)="onCheckboxChange($event)"-->
+        <!--            type="checkbox"-->
+        <!--            id="inline-checkbox1"-->
+        <!--            value="{{act.value}}"-->
+        <!--            class="form-check-input witch-input">{{ act.name}}-->
+
+        <!--        </label>-->
+
+        <label style="  transform: scale(1)" class="switch switch-text switch-primary switch-pill lg m-r-10 m-l-20">
+          <input  value="-get" (change)="onCheckboxChange($event)" type="checkbox" class="switch-input " [checked]="isGet" >
+          <span data-on="Get" data-off="Get" class="switch-label"></span>
+          <span class="switch-handle"></span>
+        </label>
+
+
+
+        <label style="  transform: scale(1)" class="switch switch-text switch-success switch-pill m-r-5 m-l-5">
+          <input value="-post" (change)="onCheckboxChange($event)" type="checkbox" class="switch-input" [checked]="isPost" >
+          <span data-on="Pst" data-off="Pst" class="switch-label"></span>
+          <span class="switch-handle"></span>
+        </label>
+
+        <label style="  transform: scale(1)"  class="switch switch-text switch-warning switch-pill m-r-5 m-l-5">
+          <input value="-put" (change)="onCheckboxChange($event)" type="checkbox" class="switch-input" [checked]="isPut" >
+          <span data-on="Put" data-off="Put" class="switch-label"></span>
+          <span class="switch-handle"></span>
+        </label>
+        <label  style="  transform: scale(1)" class="switch switch-text switch-danger switch-pill  m-l-5">
+          <input value="-delete" (change)="onCheckboxChange($event)" type="checkbox" class="switch-input"  [checked]="isDelete" >
+          <span style="font-size: 10px !important;" data-on="Del" data-off="Del" class="switch-label"></span>
+          <span class="switch-handle"></span>
+        </label>
+
+
+
+
+
+      </div>
+      <div class="input-group-addon">
+        <fa-icon [icon]="faIcon.faAsterisk"></fa-icon>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="form-actions form-group ">
+    <button  [disabled]="formGroup.invalid"  type="submit" class="btn btn-primary btn-sm">{{ 'common.submit' | translate }}</button>
+  </div>
+
+</form>

@@ -1,0 +1,90 @@
+<form novalidate (ngSubmit)="onSubmit()" [formGroup]="formGroup">
+
+
+  <div class="form-group">
+    <app-alert></app-alert>
+  </div>
+
+  <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-addon">{{ 'filed.country' | translate }}</div>
+      <input type="text"
+             id="country"
+             name="country"
+             class="form-control"
+             formControlName="country"
+             required
+             [ngClass]="{ 'is-invalid': formGroup.controls.country.invalid  && formGroup.controls.country.touched }"
+
+      >
+      <div class="input-group-addon">
+        <fa-icon  [icon]="faIcon.faMap" ></fa-icon>
+      </div>
+      <div
+        *ngIf=" !submitted &&formGroup.controls.country.invalid ||formGroup.controls.country.touched"
+        class="invalid-feedback">
+        <div *ngIf="formGroup.controls.country.hasError('required')" class="pull-right">{{ 'common.required' | translate }}
+        </div>
+        <div *ngIf="formGroup.controls.country.hasError('maxlength')" class="pull-right">{{ 'common.canNotBe' | translate }}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-addon">{{ 'filed.city' | translate }}</div>
+      <input type="text"
+             id="city"
+             name="city"
+             class="form-control"
+             formControlName="city"
+             required
+             [ngClass]="{ 'is-invalid': formGroup.controls.city.invalid  && formGroup.controls.city.touched }"
+
+      >
+      <div class="input-group-addon">
+        <fa-icon  [icon]="faIcon.faMapMarker" ></fa-icon>
+      </div>
+      <div
+        *ngIf=" !submitted &&formGroup.controls.city.invalid ||formGroup.controls.city.touched"
+        class="invalid-feedback">
+        <div *ngIf="formGroup.controls.city.hasError('required')" class="pull-right">{{ 'common.required' | translate }}
+        </div>
+        <div *ngIf="formGroup.controls.city.hasError('maxlength')" class="pull-right">{{ 'common.canNotBe' | translate }}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-addon">{{ 'filed.address' | translate }}</div>
+      <input type="text"
+             id="address"
+             name="address"
+             class="form-control"
+             formControlName="address"
+             required
+             [ngClass]="{ 'is-invalid':formGroup.controls.address.invalid  && formGroup.controls.address.touched }"
+
+      >
+      <div class="input-group-addon">
+        <fa-icon  [icon]="faIcon.faAddressBook" ></fa-icon>
+      </div>
+      <div
+        *ngIf=" !submitted &&formGroup.controls.address.invalid ||formGroup.controls.address.touched"
+        class="invalid-feedback">
+        <div *ngIf="formGroup.controls.address.hasError('required')" class="pull-right">{{ 'common.required' | translate }}
+        </div>
+        <div *ngIf="formGroup.controls.address.hasError('maxlength')" class="pull-right">{{ 'common.canNotBe' | translate }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <div class="form-actions form-group ">
+    <button type="submit" class="btn btn-primary btn-sm">{{ 'common.submit' | translate }}</button>
+  </div>
+</form>

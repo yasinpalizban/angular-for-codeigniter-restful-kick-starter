@@ -1,0 +1,170 @@
+<div class="page-wrapper">
+  <div class="page-content--bge5">
+    <div class="container">
+      <div class="login-wrap">
+        <div class="login-content">
+          <div class="login-logo">
+<!--            <a href="#">-->
+<!--              <img src="assets/images/icon/logo.png" alt="CoolAdmin">-->
+<!--            </a>-->
+            <h4> {{ 'auth.activationAccount' | translate }}</h4>
+          </div>
+          <nav>
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+              <a class="nav-item nav-link active" id="custom-nav-info-tab" data-toggle="tab"
+                 href="#custom-nav-info" role="tab" aria-controls="custom-nav-info"
+                 aria-selected="true" (click)="onClearAlert()">{{ 'auth.activateViaEmail' | translate }}</a>
+              <a class="nav-item nav-link" id="custom-nav-address-tab" data-toggle="tab"
+                 href="#custom-nav-address" role="tab" aria-controls="custom-nav-address"
+                 aria-selected="false" (click)="onClearAlert()">{{ 'auth.activateViaSms' | translate }}</a>
+
+            </div>
+          </nav>
+          <div class="tab-content pl-3 pt-2" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="custom-nav-info" role="tabpanel"
+                 aria-labelledby="custom-nav-info-tab">
+              <div class="login-form">
+                <form novalidate (ngSubmit)="onSubmit()" [formGroup]="formGroupEmail">
+                  <div class="form-group">
+                    <app-alert></app-alert>
+                  </div>
+                  <div class="form-group">
+                    <label>{{ 'filed.token' | translate }}</label>
+                    <input
+                      formControlName="token"
+                      required
+                      [ngClass]="{ 'is-invalid': formGroupEmail.controls.token.invalid && formGroupEmail.controls.token.touched }"
+                      class="au-input au-input--full"
+                      type="text"
+                      name="token"
+                      placeholder="{{ 'filed.token' | translate }}">
+                    <div *ngIf=" !submitted &&formGroupEmail.controls.token.invalid ||formGroupEmail.controls.token.touched"
+                         class="invalid-feedback">
+                      <div *ngIf="formGroupEmail.controls.token.errors"
+                           class="pull-right">{{ 'common.required' | translate }}</div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label>{{ 'filed.email' | translate }}</label>
+                    <input
+                      formControlName="email"
+                      required
+                      [ngClass]="{ 'is-invalid': formGroupEmail.controls.email.invalid && formGroupEmail.controls.email.touched }"
+                      class="au-input au-input--full"
+                      type="email"
+                      name="email"
+                      placeholder="{{ 'filed.email' | translate }}">
+                    <div *ngIf=" !submitted && formGroupEmail.controls.email.invalid ||formGroupEmail.controls.email.touched"
+                         class="invalid-feedback">
+                      <div *ngIf="formGroupEmail.controls.email.errors"
+                           class="pull-right">{{ 'common.required' | translate }}</div>
+                    </div>
+                  </div>
+
+                  <div class="register-link">
+
+                    <button
+                      class="au-btn  au-btn--green   m-r-5"
+                      type="submit"
+                      [disabled]="formGroupEmail.invalid">{{'common.submit'|translate}}
+                    </button>
+                    <button
+                      class="au-btn  au-btn--blue m-l-5"
+                      type="submit"
+                     (click)="onSendEmail()">{{'common.sendEmailLink'|translate}}
+                    </button>
+                  </div>
+
+                </form>
+
+              </div>
+            </div>
+            <div class="tab-pane fade" id="custom-nav-address" role="tabpanel"
+                 aria-labelledby="custom-nav-address-tab">
+              <div class="login-form">
+                <form novalidate (ngSubmit)="onSubmit2()" [formGroup]="formGroupSms">
+                  <div class="form-group">
+                    <app-alert></app-alert>
+                  </div>
+                  <div class="form-group">
+                    <label>{{ 'filed.code' | translate }}</label>
+                    <input
+                      formControlName="code"
+                      required
+                      [ngClass]="{ 'is-invalid': formGroupSms.controls.code.invalid && formGroupSms.controls.code.touched }"
+                      class="au-input au-input--full"
+                      type="number"
+                      name="code"
+                      placeholder="{{ 'filed.code' | translate }}">
+                    <div *ngIf=" !submitted2 &&formGroupSms.controls.code.invalid ||formGroupSms.controls.code.touched"
+                         class="invalid-feedback">
+                      <div *ngIf="formGroupSms.controls.code.errors"
+                           class="pull-right">{{ 'common.required' | translate }}</div>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label>{{ 'filed.phone' | translate }}</label>
+                    <input
+                      formControlName="phone"
+                      required
+                      [ngClass]="{ 'is-invalid': formGroupSms.controls.phone.invalid && formGroupSms.controls.phone.touched }"
+                      class="au-input au-input--full"
+                      type="text"
+                      name="phone"
+                      placeholder="{{ 'filed.phone' | translate }}">
+                    <div *ngIf=" !submitted2 && formGroupSms.controls.phone.invalid ||formGroupSms.controls.phone.touched"
+                         class="invalid-feedback">
+                      <div *ngIf="formGroupSms.controls.phone.errors"
+                           class="pull-right">{{ 'common.required' | translate }}</div>
+                    </div>
+                  </div>
+
+                  <div class="register-link">
+
+                    <button
+                      class="au-btn  au-btn--green   m-r-5"
+                      type="submit"
+                      [disabled]="formGroupSms.invalid">{{'common.submit'|translate}}
+                    </button>
+                    <button
+                      class="au-btn  au-btn--blue m-l-5"
+                      type="submit"
+                      (click)="onSendSms()"
+                      >{{'common.sendSmsCode'|translate}}
+                    </button>
+                  </div>
+
+                </form>
+
+              </div>
+            </div>
+
+
+          </div>
+
+          <div class="card" style=" border: none; padding: 0; margin: 0">
+
+            <div class="card-body">
+              <button [routerLink]="['/home/sign-in']" data-toggle="tooltip" tooltip="  {{ 'auth.alreadyHave' | translate }}" type="button" class="btn btn-link btn-sm">
+                {{ 'auth.signIn' | translate }}</button>
+
+              <button [routerLink]="['../sign-up']" data-toggle="tooltip" tooltip=" {{ 'auth.doNotHave' | translate }}" type="button" class="btn btn-link btn-sm">
+                {{ 'auth.signUp' | translate }}</button>
+
+              <button [routerLink]="['../forgot']" data-toggle="tooltip" tooltip="  {{ 'auth.doNotRememberPassword' | translate }}" type="button" class="btn btn-link btn-sm">
+                {{ 'auth.forgotPassword' | translate }}</button>
+              <button [routerLink]="['../reset-password']" data-toggle="tooltip" tooltip="   {{ 'auth.needResetPassword' | translate }}" type="button" class="btn btn-link btn-sm">
+                {{ 'auth.resetPassword' | translate }}</button>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+

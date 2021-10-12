@@ -1,0 +1,52 @@
+<section class="statistic">
+  <div class="section__content section__content--p30">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header">
+              <i   class="fas fa-user" ></i>
+              <strong class="card-title pl-2">{{ 'profile.title' | translate }} </strong>
+            </div>
+            <div class="card-body">
+              <div class="custom-tab">
+
+                <nav>
+                  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                    <a class="nav-item nav-link active" id="custom-nav-info-tab" data-toggle="tab"
+                       href="#custom-nav-info" role="tab" aria-controls="custom-nav-info"
+                       aria-selected="true" (click)="onClearAlert()">{{ 'profile.basic' | translate }}</a>
+                    <a class="nav-item nav-link" id="custom-nav-address-tab" data-toggle="tab"
+                       href="#custom-nav-address" role="tab" aria-controls="custom-nav-address"
+                       aria-selected="false" (click)="onClearAlert()">{{ 'profile.location' | translate }}</a>
+
+                    <a class="nav-item nav-link" id="custom-nav-password-tab" data-toggle="tab"
+                       href="#custom-nav-password" role="tab" aria-controls="custom-nav-password"
+                       aria-selected="false" (click)="onClearAlert()">{{ 'profile.change' | translate }}</a>
+
+                  </div>
+                </nav>
+                <div class="tab-content pl-3 pt-2" id="nav-tabContent">
+                  <div class="tab-pane fade show active" id="custom-nav-info" role="tabpanel"
+                       aria-labelledby="custom-nav-info-tab">
+                    <app-user-info></app-user-info>
+                  </div>
+                  <div class="tab-pane fade" id="custom-nav-address" role="tabpanel"
+                       aria-labelledby="custom-nav-address-tab">
+                    <app-user-address></app-user-address>
+                  </div>
+                  <div class="tab-pane fade" id="custom-nav-password" role="tabpanel"
+                       aria-labelledby="custom-nav-password-tab">
+                    <app-user-password></app-user-password>
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
